@@ -1,526 +1,1269 @@
 /* <-- Variabel Global --> */
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Poppins:wght@400;500;600;700&display=swap');
-:root{
-    --header-height: 3rem;
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@500&family=Poppins:wght@400;500;600;700&display=swap");
+:root {
+  --header-height: 3rem;
 
-    /* colors */
-    --primary: #1B1C22;
-    --secondary: #FBB465;
-    --silver: #E6E6E6;
+  /* colors */
+  --primary: #1b1c22;
+  --secondary: #fbb465;
+  --silver: #e6e6e6;
 
-    /* fonts */
-    --fontDefaults: 'Poppins', sans-serif;
-    --fontLogo: 'Kanit', sans-serif;
-    --heading1: 2.625rem;
-    --heading2: 1.875rem;
-    --normal-font-size: 1.125rem;
-    --nav-font-size: 1rem;
-    --expertsystem-font-size: 1.75rem;
-    --machinelearning-font-size: 1.563rem;
+  /* fonts */
+  --fontDefaults: "Poppins", sans-serif;
+  --fontLogo: "Kanit", sans-serif;
+  --heading1: 2.625rem;
+  --heading2: 1.875rem;
+  --normal-font-size: 1.125rem;
+  --nav-font-size: 1rem;
+  --expertsystem-font-size: 1.75rem;
+  --machinelearning-font-size: 1.563rem;
 
-    /* z-index */
-    --z-fixed: 1;
+  /* z-index */
+  --z-fixed: 1;
 }
-@keyframes spin{
-    0%{
-        transform: rotate(0deg);
-    }
-    100%{
-        transform: rotate(360deg);
-    }
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-@keyframes bounceTop{
-    0%, 100%{
-        transform: translateY(-30px);
-    }
-    50%{
-        transform: translateY(0px);
-    }
+@keyframes bounceTop {
+  0%,
+  100% {
+    transform: translateY(-30px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
 }
 /* end global variabel */
 
 /* All */
-body{
-    overflow-x: hidden;
-    background-color: var(--primary);
-    scroll-behavior: smooth;
+body {
+  overflow-x: hidden;
+  background-color: var(--primary);
+  scroll-behavior: smooth;
+  width: 100%;
+  position: relative;
 }
-*{
-    margin: 0;
-    padding: 0;
-    outline: none !important;
+* {
+  margin: 0;
+  padding: 0;
+  outline: none !important;
+  box-sizing: border-box;
 }
-img{
-    max-width: 100%;
-    vertical-align: middle;
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
 }
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 }
-.navbar{
-    background-color: var(--primary);
-    padding: 10px 0;
+.navbar {
+  background-color: var(--primary);
+  padding: 10px 0;
 }
-.navbar > .container{
-    padding: 15px 0;
+.navbar > .container {
+  padding: 15px 0;
 }
-.navbar .nav-item{
-    margin-left: 45px;
+.navbar .nav-item {
+  margin-left: 45px;
 }
 .navbar .nav-item .nav-link {
-    color: var(--silver);
-    font-size: var(--nav-font-size);
-    font-family: var(--fontDefaults);
-    font-weight: 500;
-    padding: 5px 0;
-    position: relative;
+  color: var(--silver);
+  font-size: var(--nav-font-size);
+  font-family: var(--fontDefaults);
+  font-weight: 500;
+  padding: 5px 0;
+  position: relative;
 }
 .navbar .nav-item .nav-link::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 1px;
-    background-color: var(--secondary);
-    transition: all 0.5s ease;
-    transform: scale(0);
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--secondary);
+  transition: all 0.5s ease;
+  transform: scale(0);
 }
 .navbar .nav-item .nav-link.active::before,
-.navbar .nav-item .nav-link:hover::before{
-    color: var(--secondary);
-    transform: scale(1);
+.navbar .nav-item .nav-link:hover::before {
+  color: var(--secondary);
+  transform: scale(1);
 }
 .logopad {
-    max-height: 30px;
+  max-height: 30px;
 }
 /* end navbar */
 
 /* home page */
-.home{
-    padding: 150px 0;
-    min-height: 100vh;
+.home {
+  padding: 150px 0;
+  min-height: 100vh;
 }
-.home_photo{
-    position: relative;
+.home_photo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
-.home_photo img{
-    max-width: 414.27px;
-    max-height: 400;
-    width: 100%;
-    animation: bounceTop 3s ease infinite;
+.home_photo img {
+  max-width: 350px;
+  max-height: 350px;
+  width: 100%;
+  height: auto;
+  animation: bounceTop 3s ease infinite;
+  border-radius: 50%;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
-.home_photo .circle{
-    position: absolute;
-    z-index: var(--z-fixed);
-    height: 400px;
-    width: 400px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    top: 0%;
+.home_photo .circle {
+  position: absolute;
+  z-index: var(--z-fixed);
+  height: 350px;
+  width: 350px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.home_photo .circle::before{
-    content: '';
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 50%;
-    left: 10%;
-    top: 10%;
-    transform-origin: 160px 160px;
-    animation: spin 10s linear infinite;
+.home_photo .circle::before {
+  content: "";
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  left: 10%;
+  top: 10%;
+  transform-origin: 160px 160px;
+  animation: spin 10s linear infinite;
 }
-.home_intro h1{
-    margin-top: -10px;
-    font-family: var(--fontLogo);
-    font-weight: 500;
-    font-size: var(--heading1);
-    color: var(--silver);
+.home_intro h1 {
+  margin-top: -10px;
+  font-family: var(--fontLogo);
+  font-weight: 500;
+  font-size: var(--heading1);
+  color: var(--silver);
 }
-.home_intro h2{
-    font-family: var(--fontLogo);
-    font-weight: 500;
-    font-size: var(--heading2);
-    color: var(--silver);
+.home_intro h2 {
+  font-family: var(--fontLogo);
+  font-weight: 500;
+  font-size: var(--heading2);
+  color: var(--silver);
 }
-.home_intro p{
-    margin-top: 15px;
-    font-family: var(--fontDefaults);
-    font-weight: 400;
-    font-size: var(--nav-font-size);
-    color: var(--silver);
+.home_intro p {
+  margin-top: 15px;
+  font-family: var(--fontDefaults);
+  font-weight: 400;
+  font-size: var(--nav-font-size);
+  color: var(--silver);
 }
-.home_social a{
-    margin-right: 20px;
+.home_social a {
+  margin-right: 20px;
 }
 /* end home page */
 
-/* projects */
-.project{
-    padding-bottom: 150px;
-    min-height: 100vh;
-    padding-top: 100px;
+/* projects - improved responsive layout */
+.project {
+  padding-bottom: 150px;
+  min-height: 100vh;
+  padding-top: 100px;
 }
-.project h1{
-    font-family: var(--fontLogo);
-    font-weight: 500;
-    font-size: var(--heading1);
-    color: var(--silver);
+.project h1 {
+  font-family: var(--fontLogo);
+  font-weight: 500;
+  font-size: var(--heading1);
+  color: var(--silver);
 }
-.line{
-    margin-top: -5px;
-    width: 96px;
-    height: 10px;
-    background-color: var(--secondary);
-    margin-left: 12px;
+.line {
+  margin-top: -5px;
+  width: 96px;
+  height: 10px;
+  background-color: var(--secondary);
+  margin-left: 12px;
 }
-.foodApp img{
-    margin-top: 50px;
-    max-height: 572px;
-    max-width: 937px;
-    float: right;
-    border-radius: 10px;
+
+/* Improved project image styling */
+.project-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain; /* Ensures entire image is visible without cropping */
+  object-position: center;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 20px auto;
+  display: block;
+  aspect-ratio: 16/9; /* Consistent aspect ratio */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.05
+  ); /* Subtle background for contrast */
 }
-.foodApp{
-    position: relative;
+
+.project-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
-.foodApp .component1{
-    position: absolute;
-    z-index: -1;
-    margin-top: 400px;
+
+.foodApp,
+.furniture,
+.expertSystem,
+.machineLearning {
+  position: relative;
+  margin-bottom: 60px;
+  padding: 20px 0;
 }
-.furniture img{
-    margin-top: 150px;
-    max-height: 572px;
-    max-width: 938.42px;
-    border-radius: 10px;
+
+/* Legacy styles for backward compatibility */
+.foodApp img {
+  float: none;
 }
-.furniture a p{
-    margin-top: 25rem;
-    padding-right: 3rem;
-    float: right;
-    color: var(--secondary);
-    font-family: var(--fontDefaults);
-    font-weight: 500;
-    font-size: 1.2rem;
+.furniture img {
+  float: none;
 }
-.furniture{
-    position: relative;
+.expertSystem img {
+  float: none;
 }
-.furniture .component2{
-    margin-top: -210px;
-    z-index: -1;
-    float: right;
-}
-.expertSystem{
-    position: relative;
-}
-.expertSystem img{
-    margin-top: 70px;
-    max-height: 445px;
-    max-width: 810px;
-    float: right;
-    border-radius: 10px;
-}
-.expertSystem .component3{
-    float: left;
-    margin-top: -230px;
-    z-index: -1;
-}
-.description1{
-    height: 209px;
-    width: 10px;
-    background-color: var(--secondary);
-    z-index: 1;
-    margin-top: 180px;
-}
-.expertSystem p{
-    font-weight: 700;
-    font-family: var(--fontDefaults);
-    font-size: var(--expertsystem-font-size);
-    color: var(--silver);
-    z-index: 2;
-    text-align: left;
-    margin-top: -190px;
-    margin-left: 20px;
-}
-.machineLearning{
-    position: relative;
-}
-.machineLearning img{
-    margin-top: 70px;
-    max-height: 445px;
-    max-width: 826.77px;
-    border-radius: 10px;
-}
-.machineLearning .component4{
-    float: right;
-    margin-top: -220px;
-    z-index: -1;
-}
-.description2{
-    height: 245px;
-    width: 10px;
-    background-color: var(--secondary);
-    z-index: 2;
-    float: right;
-    margin-top: 170px;
-}
-.machineLearning p{
-    font-weight: 700;
-    font-family: var(--fontDefaults);
-    font-size: var(--machinelearning-font-size);
-    color: var(--silver);
-    z-index: 2;
-    float: right;
-    text-align: right;
-    margin-top: 170px;
-    margin-right: 20px;
+.machineLearning img {
+  float: none;
 }
 /* end project */
 
 /* tools and skills */
-.skills h1{
-    font-family: var(--fontLogo);
-    font-weight: 500;
-    font-size: var(--heading1);
-    color: var(--silver);
-    text-align: center;
+.skills h1 {
+  font-family: var(--fontLogo);
+  font-weight: 500;
+  font-size: var(--heading1);
+  color: var(--silver);
+  text-align: center;
 }
-.skills{
-    padding-bottom: 120px;
-    padding-top: 100px;
-    min-height: 80vh;
+.skills {
+  padding-bottom: 120px;
+  padding-top: 100px;
+  min-height: 80vh;
 }
-.skills .line{
-    margin: 0 auto;
+.skills .line {
+  margin: 0 auto;
 }
-.programming{
-    margin: 50px auto;
+.programming {
+  margin: 50px auto;
 }
-.programming img{
-    padding-right: 50px;
+.programming img {
+  padding-right: 50px;
 }
-.programming .mysql{
-    padding-right: 0;
+.programming .mysql {
+  padding-right: 0;
 }
-.design{
-    margin: 50px auto;
+.design {
+  margin: 50px auto;
 }
-.design img{
-    padding-right: 50px;
+.design img {
+  padding-right: 50px;
 }
-.design .figma{
-    padding-right: 0;
+.design .figma {
+  padding-right: 0;
 }
 /* end skills */
 
 /* get in touch */
-.contact{
-    min-height: 70vh;
+.contact {
+  min-height: 70vh;
 }
-.contact h1{
-    font-family: var(--fontLogo);
-    font-weight: 500;
-    font-size: var(--heading1);
-    color: var(--silver);
+.contact h1 {
+  font-family: var(--fontLogo);
+  font-weight: 500;
+  font-size: var(--heading1);
+  color: var(--silver);
 }
-.contact p{
-    margin-top: 30px;
-    font-family: var(--fontDefaults);
-    font-weight: 400;
-    font-size: var(--normal-font-size);
-    color: var(--silver);
+.contact p {
+  margin-top: 30px;
+  font-family: var(--fontDefaults);
+  font-weight: 400;
+  font-size: var(--normal-font-size);
+  color: var(--silver);
 }
-.contact p > span{
-    font-weight: 600;
+.contact p > span {
+  font-weight: 600;
 }
-.contact p > span > a{
-    text-decoration: none;
-    color: var(--silver);
+.contact p > span > a {
+  text-decoration: none;
+  color: var(--silver);
 }
-.contact_social{
-    margin-top: 5px;
-    margin-bottom: 10px;
-    position: relative;
+.contact_social {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  position: relative;
 }
-.contact_social a{
-    margin-right: 30px;
+.contact_social a {
+  margin-right: 30px;
 }
-.contact_social .signed_logo{
-    z-index: -1;
-    right: 0;
-    position: absolute;
-    opacity: 50%;
+.contact_social .signed_logo {
+  z-index: -1;
+  right: 0;
+  position: absolute;
+  opacity: 50%;
 }
-.copyright p{
-    font-weight: 500;
+.copyright p {
+  font-weight: 500;
 }
 /* end contact */
 
 /* for mobile version */
 /* navbar */
-@media screen and (max-width: 768px){
-    body{
-        margin: 0
-    }
-    .navbar{
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-    .navbar-toggler .bar{
-        width: 25px;
-        height: 3px;
-        margin: 5px 5px;
-        transition: all 0.3s ease-in-out;
-        background: var(--silver);
-        display: block;
-        cursor: pointer;
-    }
-    .navbar-toggler.is-active .bar:nth-child(2){
-        opacity: 0;
-    }
-    .navbar-toggler.is-active .bar:nth-child(1){
-        transform: translateY(8px) rotate(45deg);
-    }
-    .navbar-toggler.is-active .bar:nth-child(3){
-        transform: translateY(-8px) rotate(-45deg);
-    }
-    .navbar-collapse{
-        margin-left: -45px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
+@media screen and (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .navbar {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  .navbar-toggler {
+    border: none;
+    padding: 4px 8px;
+    background: transparent;
+  }
+  .navbar-toggler .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px 0;
+    transition: all 0.3s ease-in-out;
+    background: var(--silver);
+    display: block;
+    cursor: pointer;
+  }
+  .navbar-toggler.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .navbar-toggler.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .navbar-toggler.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .navbar-collapse {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .navbar .nav-item {
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
 }
 
 /* home section */
-@media screen and (max-width: 768px){
-    .home_photo .circle{
-        height: 315px;
-        width: 315px;
-        top: -2%;
-        left: 5%;
-    }
-    .home_photo .circle::before{
-        height: 35px;
-        width: 35px;
-        left: 7%;
-        top: 10%;
-        transform-origin: 130px 130px;
-    }
-    .home_photo img{
-        margin-left: 8px;
-    }
-    .home_intro h1{
-        margin-left: 8px;
-        font-size: calc(var(--heading1) * 0.9);
-    }
-    .home_intro h2{
-        margin-left: 8px;
-        font-size: calc(var(--heading2) * 0.9);
-    }
-    .home_intro p{
-        margin-left: 8px;
-        font-size: calc(var(--normal-font-size) * 0.8);
-    }
-    .home_social a{
-        margin-right: 5px;
-        margin-left: 8px;
-    }
+@media screen and (max-width: 768px) {
+  .home {
+    padding: 100px 0;
+  }
+  .home_photo {
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 10px;
+  }
+  .home_photo img {
+    max-width: 280px;
+    max-height: 280px;
+  }
+  .home_photo .circle {
+    height: 280px;
+    width: 280px;
+  }
+  .home_photo .circle::before {
+    height: 30px;
+    width: 30px;
+    left: 10%;
+    top: 10%;
+    transform-origin: 110px 110px;
+  }
+  .home_intro {
+    text-align: center;
+    padding: 0 15px;
+  }
+  .home_intro h1 {
+    font-size: 2rem;
+    margin-top: 0;
+  }
+  .home_intro h2 {
+    font-size: 1.5rem;
+  }
+  .home_intro p {
+    font-size: 0.9rem;
+    text-align: left;
+    margin-top: 20px;
+  }
+  .home_social {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .home_social a {
+    margin: 0 10px;
+  }
 }
 
 /* project section */
-@media screen and (max-width: 768px){
-    .foodApp img{
-        max-height: calc(572px * 0.375);
-        max-width: calc(937px * 0.375);
-        margin-right: -8px;
-    }
-    .foodApp .component1{
-        display: none;
-    }
-    .furniture img{
-        margin-top: 80px;
-        max-height: calc(572px * 0.375);
-        max-width: calc(938.42px * 0.375);
-        margin-left: 8px;
-    }
-    .furniture .component2{
-        display: none;
-    }
-    .furniture a p{
-        float: left;
-        margin-top: 2rem;
-        margin-left: 1rem;
-    }
-    .expertSystem img{
-        margin-top: 50px;
-        max-height: calc(445px * 0.435);
-        max-width: calc(810px * 0.435);
-        margin-bottom: 30px;
-        margin-right: -8px;
-    }
-    .expertSystem .component3{
-        display: none;
-    }
-    .expertSystem .description1{
-        margin-top: 270px;
-        height: 115px;
-    }
-    .expertSystem p{
-        font-size: var(--normal-font-size);
-        margin-bottom: -35px;
-    }
-    .machineLearning img{
-        max-height: calc(445px * 0.425);
-        max-width: calc(826.77px * 0.425);
-        margin-bottom: -130px;
-        margin-left: 8px;
-    }
-    .machineLearning .component4{
-        display: none;
-    }
-    .machineLearning .description2{
-        height: 168px;
-    }
-    .machineLearning p{
-        font-size: var(--normal-font-size);
-        margin-bottom: -35px;
-    }
+@media screen and (max-width: 768px) {
+  .project {
+    padding: 50px 15px;
+  }
+  .project h1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .line {
+    margin: 10px auto;
+  }
+
+  .foodApp,
+  .furniture,
+  .expertSystem,
+  .machineLearning {
+    margin-bottom: 40px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .foodApp img:first-child,
+  .furniture img:first-child,
+  .expertSystem img:first-child,
+  .machineLearning img:first-child {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin: 15px auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  }
+
+  /* Hide decorative elements on mobile */
+  .foodApp .component1,
+  .foodApp .component3,
+  .furniture .component2,
+  .furniture .component3,
+  .expertSystem .component3,
+  .expertSystem .description1,
+  .expertSystem p,
+  .machineLearning .component4,
+  .machineLearning .description2,
+  .machineLearning p {
+    display: none;
+  }
+
+  .furniture a p {
+    display: none;
+  }
 }
 
 /* skills */
-@media screen and (max-width: 768px){
-    .programming img{
-        height: 27px;
-        margin-right: -44px;
-    }
-    .programming .mysql{
-        margin-right: 0;
-    }
-    .design img{
-        margin-top: -80px;
-        height: 27px;
-        margin-right: -44px;
-    }
-    .design .figma{
-        margin-right: 0;
-    }
+@media screen and (max-width: 768px) {
+  .skills {
+    padding: 50px 15px;
+  }
+  .skills h1 {
+    font-size: 2rem;
+  }
+  .programming,
+  .design {
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .programming img,
+  .design img {
+    height: 40px;
+    width: auto;
+    padding-right: 0;
+    margin: 5px;
+  }
 }
 
 /* contact */
-@media screen and (max-width: 768px){
-    .contact_social a{
-        margin-right: 10px;
+@media screen and (max-width: 768px) {
+  .contact {
+    padding: 50px 15px;
+    margin-bottom: 50px;
+  }
+  .contact h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .contact .line {
+    margin: 10px auto;
+  }
+  .contact p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .contact_social {
+    text-align: center;
+    margin: 30px 0;
+  }
+  .contact_social a {
+    margin: 0 15px;
+  }
+  .contact .signed_logo {
+    display: none;
+  }
+  .copyright {
+    text-align: center;
+    margin-top: 30px;
+  }
+}
+
+/* Extra responsive breakpoints for better mobile coverage */
+
+/* Large tablets (768px - 992px) */
+@media screen and (min-width: 769px) and (max-width: 991px) {
+  .home {
+    padding: 120px 0;
+  }
+  .home_photo img {
+    max-width: 350px;
+    max-height: 350px;
+  }
+  .home_photo .circle {
+    height: 350px;
+    width: 350px;
+  }
+  .home_intro h1 {
+    font-size: 2.2rem;
+  }
+  .home_intro h2 {
+    font-size: 1.7rem;
+  }
+  .project {
+    padding: 80px 20px;
+  }
+  .foodApp img,
+  .furniture img,
+  .expertSystem img,
+  .machineLearning img {
+    max-width: 450px;
+  }
+}
+
+/* Small tablets and large phones (576px - 768px) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .home_photo img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .home_photo .circle {
+    height: 300px;
+    width: 300px;
+  }
+  .home_intro h1 {
+    font-size: 1.9rem;
+  }
+  .home_intro h2 {
+    font-size: 1.4rem;
+  }
+  .programming img,
+  .design img {
+    height: 38px;
+  }
+}
+
+/* Extra small devices (320px - 576px) */
+@media screen and (max-width: 576px) {
+  body {
+    font-size: 14px;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .home {
+    padding: 80px 0;
+  }
+
+  .home_photo img {
+    max-width: 250px;
+    max-height: 250px;
+  }
+
+  .home_photo .circle {
+    height: 250px;
+    width: 250px;
+  }
+
+  .home_photo .circle::before {
+    height: 25px;
+    width: 25px;
+    transform-origin: 100px 100px;
+  }
+
+  .home_intro {
+    padding: 0 10px;
+  }
+
+  .home_intro h1 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+  }
+
+  .home_intro h2 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+  }
+
+  .home_intro p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: 15px;
+  }
+
+  .home_social a img {
+    height: 30px;
+    width: auto;
+  }
+
+  .project {
+    padding: 40px 10px;
+  }
+
+  .project h1,
+  .skills h1,
+  .contact h1 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+  }
+
+  .line {
+    width: 80px;
+    height: 8px;
+  }
+
+  .foodApp img,
+  .furniture img,
+  .expertSystem img,
+  .machineLearning img {
+    max-width: 100%;
+    margin: 15px 0;
+    border-radius: 8px;
+  }
+
+  .skills {
+    padding: 40px 10px;
+  }
+
+  .programming,
+  .design {
+    gap: 15px;
+    margin: 25px auto;
+  }
+
+  .programming img,
+  .design img {
+    height: 32px;
+  }
+
+  .contact {
+    padding: 40px 10px;
+  }
+
+  .contact p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .contact_social a img {
+    height: 30px;
+    width: auto;
+  }
+
+  .copyright p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Very small devices (below 375px) */
+@media screen and (max-width: 374px) {
+  .navbar-brand {
+    font-size: 1rem;
+  }
+
+  .home_photo img {
+    max-width: 220px;
+    max-height: 220px;
+  }
+
+  .home_photo .circle {
+    height: 220px;
+    width: 220px;
+  }
+
+  .home_intro h1 {
+    font-size: 1.4rem;
+  }
+
+  .home_intro h2 {
+    font-size: 1.1rem;
+  }
+
+  .home_intro p {
+    font-size: 0.8rem;
+  }
+
+  .project h1,
+  .skills h1,
+  .contact h1 {
+    font-size: 1.4rem;
+  }
+
+  .programming img,
+  .design img {
+    height: 28px;
+  }
+
+  .home_social a img,
+  .contact_social a img {
+    height: 26px;
+  }
+}
+
+/* Landscape orientation for mobile devices */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .home {
+    padding: 60px 0;
+  }
+
+  .home_photo {
+    margin-bottom: 20px;
+  }
+
+  .home_photo img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .home_photo .circle {
+    height: 200px;
+    width: 200px;
+  }
+
+  .home_intro h1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .home_intro h2 {
+    font-size: 1.2rem;
+  }
+
+  .home_intro p {
+    font-size: 0.8rem;
+    margin-top: 10px;
+  }
+
+  .project,
+  .skills,
+  .contact {
+    padding: 40px 15px;
+  }
+}
+
+/* High DPI displays */
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi) {
+  .home_photo img,
+  .programming img,
+  .design img,
+  .home_social img,
+  .contact_social img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+  }
+}
+
+/* Additional utility classes for mobile */
+@media screen and (max-width: 768px) {
+  .text-center-mobile {
+    text-align: center !important;
+  }
+
+  .p-mobile {
+    padding: 15px !important;
+  }
+
+  .mb-mobile {
+    margin-bottom: 20px !important;
+  }
+}
+
+/* Enhanced project layout for better responsiveness */
+@media screen and (max-width: 768px) {
+  .project .row .col-lg-6 {
+    margin-bottom: 30px;
+  }
+
+  .project .foodApp,
+  .project .furniture,
+  .project .expertSystem,
+  .project .machineLearning {
+    padding: 0 10px;
+  }
+}
+
+/* Better spacing for mobile project images */
+@media screen and (max-width: 576px) {
+  .project .row .col-12 {
+    margin-bottom: 20px;
+  }
+
+  .project img[src*="assets/images/"] {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+}
+
+/* Improved mobile navigation */
+@media screen and (max-width: 768px) {
+  .navbar .container {
+    padding: 10px 0;
+  }
+
+  .navbar-nav {
+    background-color: rgba(27, 28, 34, 0.95);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 5px 0;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover {
+    background-color: rgba(251, 180, 101, 0.1);
+  }
+}
+
+/* Performance optimizations for mobile */
+@media screen and (max-width: 768px) {
+  .home_photo .circle::before {
+    animation: spin 15s linear infinite; /* Slower animation for mobile */
+  }
+
+  .home_photo img {
+    animation: bounceTop 4s ease infinite; /* Slower bounce for mobile */
+  }
+}
+
+/* Mobile performance optimizations */
+@media screen and (max-width: 768px) {
+  /* Disable animations on very small screens to improve performance */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
-    .contact .signed_logo{
-        margin-top: 50px;
-        margin-right: 10px;
-        height: 150px;
-        width: 150px;
-    }
-    .contact{
-        margin-bottom: 120px;
-    }
+  }
+
+  /* Optimize images for mobile */
+  img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+  }
+
+  /* Improve scrolling performance */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Reduce animation complexity on mobile */
+  .home_photo img {
+    animation: bounceTop 6s ease infinite;
+  }
+
+  .home_photo .circle::before {
+    animation: spin 20s linear infinite;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-color-scheme: dark) {
+  /* Already using dark theme, no changes needed */
+}
+
+/* Focus states for keyboard navigation */
+.nav-link:focus,
+.navbar-toggler:focus,
+a:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .navbar,
+  .home_photo .circle,
+  .component1,
+  .component2,
+  .component3,
+  .component4 {
+    display: none !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .home_intro h1,
+  .home_intro h2,
+  .project h1,
+  .skills h1,
+  .contact h1 {
+    color: black !important;
+  }
+}
+
+/* Touch device specific improvements */
+.touch-device .nav-link {
+  padding: 12px 15px; /* Larger touch targets */
+}
+
+.touch-device .home_social a,
+.touch-device .contact_social a {
+  padding: 8px;
+  margin: 0 8px;
+}
+
+.touch-device .navbar-toggler {
+  padding: 8px 12px;
+}
+
+/* Additional responsive improvements for images */
+
+/* Desktop and large tablets - optimize project images */
+@media screen and (min-width: 769px) {
+  .foodApp,
+  .furniture,
+  .expertSystem,
+  .machineLearning {
+    text-align: center;
+  }
+
+  .foodApp img:first-child,
+  .furniture img:first-child,
+  .expertSystem img:first-child,
+  .machineLearning img:first-child {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* Tablets - medium screens */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .home_photo img {
+    max-width: 300px;
+    max-height: 300px;
+  }
+  .home_photo .circle {
+    height: 300px;
+    width: 300px;
+  }
+
+  .foodApp img:first-child,
+  .furniture img:first-child,
+  .expertSystem img:first-child,
+  .machineLearning img:first-child {
+    max-width: 400px;
+  }
+}
+
+/* Small mobile devices */
+@media screen and (max-width: 576px) {
+  .home_photo {
+    padding: 5px;
+  }
+
+  .home_photo img {
+    max-width: 250px;
+    max-height: 250px;
+  }
+
+  .home_photo .circle {
+    height: 250px;
+    width: 250px;
+  }
+
+  .home_photo .circle::before {
+    height: 25px;
+    width: 25px;
+    transform-origin: 100px 100px;
+  }
+
+  .foodApp img:first-child,
+  .furniture img:first-child,
+  .expertSystem img:first-child,
+  .machineLearning img:first-child {
+    max-width: 300px;
+    border-radius: 10px;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 374px) {
+  .home_photo img {
+    max-width: 220px;
+    max-height: 220px;
+  }
+
+  .home_photo .circle {
+    height: 220px;
+    width: 220px;
+  }
+
+  .foodApp img:first-child,
+  .furniture img:first-child,
+  .expertSystem img:first-child,
+  .machineLearning img:first-child {
+    max-width: 280px;
+  }
+}
+
+/* Landscape orientation */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .home_photo img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .home_photo .circle {
+    height: 200px;
+    width: 200px;
+  }
+
+  .project {
+    padding: 40px 15px;
+  }
+}
+
+/* Fix aspect ratio for better image display */
+.foodApp img:first-child,
+.furniture img:first-child,
+.expertSystem img:first-child,
+.machineLearning img:first-child {
+  aspect-ratio: 16/10;
+  object-fit: cover;
+}
+
+/* Ensure no image overflow */
+.foodApp,
+.furniture,
+.expertSystem,
+.machineLearning {
+  overflow: hidden;
+}
+
+/* Container improvements */
+@media screen and (max-width: 768px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* Enhanced responsive styling for project images */
+/* Desktop large screens */
+@media screen and (min-width: 1200px) {
+  .project-image {
+    max-width: 600px;
+    aspect-ratio: 16/10;
+  }
+}
+
+/* Desktop and large tablets */
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .project-image {
+    max-width: 500px;
+    aspect-ratio: 16/10;
+  }
+}
+
+/* Tablets */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  .project-image {
+    max-width: 450px;
+    aspect-ratio: 4/3;
+    margin: 15px auto;
+  }
+
+  .project .col-lg-6 {
+    margin-bottom: 40px;
+  }
+}
+
+/* Small tablets and large phones */
+@media screen and (max-width: 767px) and (min-width: 576px) {
+  .project-image {
+    max-width: 400px;
+    aspect-ratio: 4/3;
+    margin: 15px auto;
+    border-radius: 12px;
+  }
+
+  .foodApp,
+  .furniture,
+  .expertSystem,
+  .machineLearning {
+    margin-bottom: 40px;
+    padding: 15px 10px;
+  }
+}
+
+/* Mobile phones */
+@media screen and (max-width: 575px) {
+  .project-image {
+    max-width: 100%;
+    width: 90%;
+    aspect-ratio: 3/2;
+    margin: 10px auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .project-image:hover {
+    transform: none; /* Disable hover effects on mobile */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  }
+
+  .foodApp,
+  .furniture,
+  .expertSystem,
+  .machineLearning {
+    margin-bottom: 30px;
+    padding: 10px 5px;
+  }
+
+  .project {
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+}
+
+/* Very small phones */
+@media screen and (max-width: 375px) {
+  .project-image {
+    width: 95%;
+    aspect-ratio: 4/3;
+    margin: 8px auto;
+    border-radius: 8px;
+  }
+
+  .foodApp,
+  .furniture,
+  .expertSystem,
+  .machineLearning {
+    margin-bottom: 25px;
+    padding: 8px 2px;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .project-image {
+    max-width: 300px;
+    aspect-ratio: 16/9;
+    margin: 10px auto;
+  }
+
+  .project {
+    padding-top: 60px;
+    padding-bottom: 80px;
+  }
+}
+
+/* Utility classes for project section */
+.project-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hide decorative elements on small screens to prevent clutter */
+@media screen and (max-width: 768px) {
+  .component3,
+  .component4,
+  .description1,
+  .description2 {
+    display: none !important;
+  }
+
+  /* Ensure project containers are properly centered */
+  .foodApp,
+  .furniture,
+  .expertSystem,
+  .machineLearning {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Performance optimization for images */
+.project-image {
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Focus states for accessibility */
+.project-image:focus {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
+/* Print styles for project images */
+@media print {
+  .project-image {
+    max-width: 400px;
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
 }
