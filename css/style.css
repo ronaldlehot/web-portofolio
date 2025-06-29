@@ -114,8 +114,8 @@ ul {
   padding: 20px;
 }
 .home_photo img {
-  max-width: 350px;
-  max-height: 350px;
+  max-width: 450px;
+  max-height: 450px;
   width: 100%;
   height: auto;
   animation: bounceTop 3s ease infinite;
@@ -128,8 +128,8 @@ ul {
 .home_photo .circle {
   position: absolute;
   z-index: var(--z-fixed);
-  height: 350px;
-  width: 350px;
+  height: 450px;
+  width: 450px;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
   top: 50%;
@@ -145,7 +145,7 @@ ul {
   border-radius: 50%;
   left: 10%;
   top: 10%;
-  transform-origin: 160px 160px;
+  transform-origin: 205px 205px;
   animation: spin 10s linear infinite;
 }
 .home_intro h1 {
@@ -376,19 +376,19 @@ ul {
     padding: 10px;
   }
   .home_photo img {
-    max-width: 280px;
-    max-height: 280px;
+    max-width: 320px;
+    max-height: 320px;
   }
   .home_photo .circle {
-    height: 280px;
-    width: 280px;
+    height: 320px;
+    width: 320px;
   }
   .home_photo .circle::before {
     height: 30px;
     width: 30px;
     left: 10%;
     top: 10%;
-    transform-origin: 110px 110px;
+    transform-origin: 130px 130px;
   }
   .home_intro {
     text-align: center;
@@ -596,19 +596,19 @@ ul {
   }
 
   .home_photo img {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 280px;
+    max-height: 280px;
   }
 
   .home_photo .circle {
-    height: 250px;
-    width: 250px;
+    height: 280px;
+    width: 280px;
   }
 
   .home_photo .circle::before {
     height: 25px;
     width: 25px;
-    transform-origin: 100px 100px;
+    transform-origin: 115px 115px;
   }
 
   .home_intro {
@@ -702,13 +702,13 @@ ul {
   }
 
   .home_photo img {
-    max-width: 220px;
-    max-height: 220px;
+    max-width: 250px;
+    max-height: 250px;
   }
 
   .home_photo .circle {
-    height: 220px;
-    width: 220px;
+    height: 250px;
+    width: 250px;
   }
 
   .home_intro h1 {
@@ -1013,19 +1013,19 @@ a:focus {
   }
 
   .home_photo img {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 270px;
+    max-height: 270px;
   }
 
   .home_photo .circle {
-    height: 250px;
-    width: 250px;
+    height: 270px;
+    width: 270px;
   }
 
   .home_photo .circle::before {
     height: 25px;
     width: 25px;
-    transform-origin: 100px 100px;
+    transform-origin: 110px 110px;
   }
 
   .foodApp img:first-child,
@@ -1040,13 +1040,13 @@ a:focus {
 /* Very small screens */
 @media screen and (max-width: 374px) {
   .home_photo img {
-    max-width: 220px;
-    max-height: 220px;
+    max-width: 240px;
+    max-height: 240px;
   }
 
   .home_photo .circle {
-    height: 220px;
-    width: 220px;
+    height: 240px;
+    width: 240px;
   }
 
   .foodApp img:first-child,
