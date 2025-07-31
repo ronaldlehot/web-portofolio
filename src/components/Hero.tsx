@@ -99,16 +99,16 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-                <motion.img
-                  src="./assets/images/bg.jpeg"
-                  alt="Fransisco Ronaldo Lehot"
-                  className="w-full h-full object-cover"
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                  }}
+               <motion.img
+  src="/web-portofolio/assets/images/bg.jpeg"
+  alt="Fransisco Ronaldo Lehot"
+  className="w-full h-full object-cover"
+  animate={{ y: [0, -10, 0] }}
+  transition={{
+    duration: 3,
+    repeat: Infinity,
+    ease: "easeInOut",
+  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
               </motion.div>
@@ -234,11 +234,11 @@ const Hero = () => {
 
             <div className="mb-3">
               <div className="flex items-center gap-3 mb-3">
-                <img
-                  src="./assets/images/ngobars.jpeg"
-                  alt="ngobar.id logo"
-                  className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400"
-                />
+               <img
+  src="/web-portofolio/assets/images/ngobars.jpeg"
+  alt="ngobar.id logo"
+  className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400"
+/>
                 <h3 className="font-semibold text-white">🚀 Need a Website?</h3>
               </div>
               <p className="text-gray-200 text-sm mb-3">
