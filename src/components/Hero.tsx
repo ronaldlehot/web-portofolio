@@ -100,7 +100,7 @@ const Hero = () => {
                 transition={{ duration: 0.3 }}
               >
                 <motion.img
-                  src="assets/images/bg.jpeg"
+                  src="./assets/images/bg.jpeg"
                   alt="Fransisco Ronaldo Lehot"
                   className="w-full h-full object-cover"
                   animate={{ y: [0, -10, 0] }}
@@ -235,7 +235,7 @@ const Hero = () => {
             <div className="mb-3">
               <div className="flex items-center gap-3 mb-3">
                 <img
-                  src="assets/images/ngobars.jpeg"
+                  src="./assets/images/ngobars.jpeg"
                   alt="ngobar.id logo"
                   className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400"
                 />

@@ -18,7 +18,7 @@ const Projects = () => {
       title: "Sistem Keuangan Modern",
       description:
         "Aplikasi sistem keuangan berbasis web menggunakan Filament, Laravel untuk manajemen transaksi, laporan keuangan, dan dashboard interaktif.",
-      image: "assets/images/1.png",
+      image: "./assets/images/1.png",
       tech: ["Laravel", "Filament", "MySQL"],
       liveUrl: "#",
       githubUrl: "#",
@@ -28,7 +28,7 @@ const Projects = () => {
       title: "Web Profile Gereja",
       description:
         " Aplikasi web profile gereja dengan fitur manajemen jadwal ibadah, pengumuman, dan donasi online.",
-      image: "assets/images/2.png",
+      image: "./assets/images/2.png",
       tech: ["Php Native", "Boostrap 4", "MySQL"],
       liveUrl: "#",
       githubUrl: "#",
@@ -38,7 +38,7 @@ const Projects = () => {
       title: "Sistem Inventaris Gereja",
       description:
         "Sistem manajemen inventaris gereja untuk melacak aset, peralatan, dan persediaan gereja. Fitur mencakup pencatatan barang masuk/keluar, kategori inventaris, laporan stok, dan manajemen lokasi penyimpanan.",
-      image: "assets/images/3.png",
+      image: "./assets/images/3.png",
       tech: ["PHP Native", "Tailwind CSS", "MySQL", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#",
@@ -48,7 +48,7 @@ const Projects = () => {
       title: "Sistem Pendukung Keputusan Nakes Terbaik",
       description:
         "Sistem pendukung keputusan untuk menentukan tenaga kesehatan terbaik menggunakan metode AHP (Analytical Hierarchy Process) dan SAW (Simple Additive Weighting) dengan interface yang user-friendly.",
-      image: "assets/images/4.png",
+      image: "./assets/images/4.png",
       tech: ["PHP Native", "Boostrap 4", "MySQL", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#",
@@ -58,7 +58,7 @@ const Projects = () => {
       title: "Sistem Informasi Bantuan Dana Hibah dan Sosial",
       description:
         "Sistem informasi untuk mengelola dana bantuan hibah dan sosial dengan fitur verifikasi penerima, pencairan dana, laporan distribusi, dan monitoring penggunaan bantuan.",
-      image: "assets/images/5.png",
+      image: "./assets/images/5.png",
       tech: ["Laravel", "Tailwind CSS", "MySQL", "Livewire"],
       liveUrl: "#",
       githubUrl: "#",
@@ -68,7 +68,7 @@ const Projects = () => {
       title: "SPK Pemilihan Kredit Koperasi",
       description:
         "Sistem pendukung keputusan untuk pemilihan kredit koperasi dengan kriteria kelayakan dan analisis risiko untuk membantu pengambilan keputusan yang tepat dengan menggunakan metode Copras.",
-      image: "assets/images/6.png",
+      image: "./assets/images/6.png",
       tech: ["Laravel", "Tailwind CSS", "MySQL", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#",
@@ -78,7 +78,7 @@ const Projects = () => {
       title: "SPK Rekomendasi Tempat Wisata di Bajawa",
       description:
         "Sistem pendukung keputusan untuk memberikan rekomendasi tempat wisata terbaik di Bajawa berdasarkan kriteria seperti akses jalan, fasilitas, dan rating pengunjung dengan menggunakan metode Smart.",
-      image: "assets/images/7.png",
+      image: "./assets/images/7.png",
       tech: ["Laravel", "Tailwind CSS", "MySQL", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#",
@@ -88,7 +88,7 @@ const Projects = () => {
       title: "SPK Rekomendasi Sekolah",
       description:
         "Sistem pendukung keputusan untuk memberikan rekomendasi sekolah terbaik berdasarkan kriteria akreditasi, fasilitas, prestasi akademik, dan lokasi strategis dengan metode scoring yang komprehensif dengan menggunakan metode Smart dan Topsis.",
-      image: "assets/images/8.png",
+      image: "./assets/images/8.png",
       tech: ["Laravel", "Tailwind CSS", "MySQL", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#",
@@ -98,7 +98,7 @@ const Projects = () => {
       title: "Sistem Pembayaran BPP",
       description:
         "Sistem pembayaran Biaya Pendidikan dan Pelatihan dengan fitur pencatatan transaksi, laporan keuangan, dan manajemen data mahasiswa.",
-      image: "assets/images/9.png",
+      image: "./assets/images/9.png",
       tech: ["CodeIgniter 3", "Bootstrap", "MySQL", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#",
@@ -108,7 +108,7 @@ const Projects = () => {
       title: "Web Profile Sekolah",
       description:
         "Website profile sekolah dengan fitur informasi akademik, galeri kegiatan, berita sekolah, dan sistem manajemen konten untuk administrator.",
-      image: "assets/images/10.png",
+      image: "./assets/images/10.png",
       tech: ["PHP Native", "Bootstrap", "MySQL", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#",
@@ -118,7 +118,7 @@ const Projects = () => {
       title: "Web Reservasi Rental Mobil",
       description:
         "Platform reservasi rental mobil lengkap dengan paket sewa, sistem pembayaran terintegrasi (Midtrans/Xendit), notifikasi email otomatis, dan WhatsApp gateway untuk konfirmasi booking dan status rental.",
-      image: "assets/images/12.png",
+      image: "./assets/images/12.png",
       tech: [
         "Laravel",
         "Tailwind CSS",
@@ -135,7 +135,7 @@ const Projects = () => {
       title: "SPK Pemilihan Guru Terbaik",
       description:
         "Sistem pendukung keputusan untuk menentukan guru terbaik berdasarkan kriteria kinerja, kualifikasi pendidikan, pengalaman mengajar, dan prestasi akademik menggunakan metode Electre.",
-      image: "assets/images/13.png",
+      image: "./assets/images/13.png",
       tech: ["Laravel", "Tailwind CSS", "MySQL", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#",
@@ -145,7 +145,7 @@ const Projects = () => {
       title: "SPK Pemilihan Pelatih Metode VIKOR",
       description:
         "Sistem pendukung keputusan untuk menentukan pelatih terbaik menggunakan metode VIKOR (Vise Kriterijumska Optimizacija I Kompromisno Resenje) dengan kriteria pengalaman, prestasi, kualifikasi sertifikasi, dan kemampuan komunikasi.",
-      image: "assets/images/14.png",
+      image: "./assets/images/14.png",
       tech: ["Laravel", "Tailwind CSS", "MySQL", "JavaScript"],
       liveUrl: "#",
       githubUrl: "#",
@@ -155,7 +155,7 @@ const Projects = () => {
       title: "SPK Dana Bantuan Metode MOORA",
       description:
         "Sistem pendukung keputusan untuk menentukan penerima dana bantuan menggunakan metode MOORA (Multi-Objective Optimization by Ratio Analysis) dengan kriteria penghasilan, jumlah tanggungan, kondisi rumah, dan pekerjaan.",
-      image: "assets/images/15.png",
+      image: "./assets/images/15.png",
       tech: ["Laravel", "Tailwind CSS", "MySQL", "JavaScript"],
       liveUrl: "https://spk-moora.ngobars.id",
       githubUrl: "#",
