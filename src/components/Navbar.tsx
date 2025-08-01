@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
+import LanguageSelector from "./LanguageSelector";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,10 +39,10 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "Projects", href: "#projects" },
-    { name: "Skills", href: "#skills" },
-    { name: "Contact", href: "#contact" },
+    { name: t("nav.home"), href: "#home" },
+    { name: t("nav.projects"), href: "#projects" },
+    { name: t("nav.skills"), href: "#skills" },
+    { name: t("nav.contact"), href: "#contact" },
   ];
 
   const scrollToSection = (href: string) => {
@@ -88,25 +91,30 @@ const Navbar = () => {
           </motion.a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.a
-                key={item.name}
-                href={item.href}
-                className="text-silver hover:text-secondary transition-colors duration-300 relative group"
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.href);
-                }}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 + 0.3 }}
-                whileHover={{ y: -2 }}
-              >
-                {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
-              </motion.a>
-            ))}
+          <div className="hidden md:flex items-center space-x-6">
+            <div className="flex items-center space-x-8">
+              {navItems.map((item, index) => (
+                <motion.a
+                  key={item.name}
+                  href={item.href}
+                  className="text-silver hover:text-secondary transition-colors duration-300 relative group"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 + 0.3 }}
+                  whileHover={{ y: -2 }}
+                >
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-secondary transition-all duration-300 group-hover:w-full"></span>
+                </motion.a>
+              ))}
+            </div>
+
+            {/* Language Selector */}
+            <LanguageSelector />
           </div>
 
           {/* Mobile Menu Button */}
@@ -138,6 +146,11 @@ const Navbar = () => {
           transition={{ duration: 0.3, ease: "easeInOut" }}
         >
           <div className="bg-dark/95 backdrop-blur-sm border border-glass-border rounded-lg p-4 mt-4 space-y-2 shadow-xl">
+            {/* Language Selector for Mobile */}
+            <div className="pb-3 border-b border-glass-border mb-3">
+              <LanguageSelector />
+            </div>
+
             {navItems.map((item, index) => (
               <motion.a
                 key={item.name}

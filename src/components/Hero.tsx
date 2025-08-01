@@ -9,8 +9,10 @@ import {
   X,
 } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -99,16 +101,16 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
               >
-               <motion.img
-  src="/web-portofolio/assets/images/bg.jpeg"
-  alt="Fransisco Ronaldo Lehot"
-  className="w-full h-full object-cover"
-  animate={{ y: [0, -10, 0] }}
-  transition={{
-    duration: 3,
-    repeat: Infinity,
-    ease: "easeInOut",
-  }}
+                <motion.img
+                  src="/web-portofolio/assets/images/bg.jpeg"
+                  alt="Fransisco Ronaldo Lehot"
+                  className="w-full h-full object-cover"
+                  animate={{ y: [0, -10, 0] }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
               </motion.div>
@@ -124,26 +126,23 @@ const Hero = () => {
               className="text-lg sm:text-xl md:text-2xl text-silver/80 mb-3 sm:mb-4"
               variants={itemVariants}
             >
-              Hi, I'm Fransisco Ronaldo Lehot
+              {t("hero.greeting")}
             </motion.h2>
 
             <motion.h1
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-kanit font-bold mb-4 sm:mb-6 leading-tight"
               variants={itemVariants}
             >
-              <span className="gradient-text">Frontend</span>
+              <span className="gradient-text">{t("hero.name")}</span>
               <br />
-              <span className="text-silver">Development</span>
+              <span className="text-silver">{t("hero.title")}</span>
             </motion.h1>
 
             <motion.p
               className="text-base sm:text-lg text-silver/70 mb-6 sm:mb-8 leading-relaxed max-w-full lg:max-w-2xl mx-auto lg:mx-0 px-2 sm:px-0"
               variants={itemVariants}
             >
-              I'm from Kupang, Nusa Tenggara Timur and I am a Computer Science
-              graduate from Nusa Cendana University, graduated Cum Laude with a
-              GPA of 3.72. My passion lies in technology, and I continue to
-              learn to stay ahead in this dynamic field.
+              {t("hero.description")}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -161,7 +160,7 @@ const Hero = () => {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                View My Work
+                {t("hero.portfolioButton")}
               </motion.button>
               <motion.button
                 className="btn-glass w-full sm:w-auto px-6 sm:px-8 py-3 text-sm sm:text-base"
@@ -173,7 +172,7 @@ const Hero = () => {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Get In Touch
+                {t("hero.getInTouch")}
               </motion.button>
             </motion.div>
 
@@ -234,24 +233,26 @@ const Hero = () => {
 
             <div className="mb-3">
               <div className="flex items-center gap-3 mb-3">
-               <img
-  src="/web-portofolio/assets/images/ngobars.jpeg"
-  alt="ngobar.id logo"
-  className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400"
-/>
-                <h3 className="font-semibold text-white">🚀 Need a Website?</h3>
+                <img
+                  src="/web-portofolio/assets/images/ngobars.jpeg"
+                  alt="ngobar.id logo"
+                  className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400"
+                />
+                <h3 className="font-semibold text-white">
+                  {t("hero.chatbot.buttonText")}
+                </h3>
               </div>
               <p className="text-gray-200 text-sm mb-3">
-                Hi! I'm from{" "}
-                <span className="text-yellow-400 font-bold">ngobar.id</span> - a
-                web development business. Looking for a modern, professional
-                website?
+                {t("hero.chatbot.description")}
               </p>
               <p className="text-gray-300 text-xs mb-3">
-                ✨ React & Modern Frameworks
+                {t("hero.chatbot.feature1")}
                 <br />
-                ✨ Responsive Design
-                <br />✨ Fast & SEO Optimized
+                {t("hero.chatbot.feature2")}
+                <br />
+                {t("hero.chatbot.feature3")}
+                <br />
+                {t("hero.chatbot.feature4")}
               </p>
               <motion.button
                 onClick={() =>
@@ -261,7 +262,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                💬 Chat on Instagram
+                {t("hero.chatbot.contactButton")}
               </motion.button>
             </div>
           </motion.div>

@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Skills = () => {
+  const { t } = useLanguage();
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -52,11 +54,9 @@ const Skills = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title gradient-text">Tools & Skills</h2>
+          <h2 className="section-title gradient-text">{t("skills.title")}</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto mb-6"></div>
-          <p className="section-subtitle">
-            Technologies and tools I work with to bring ideas to life
-          </p>
+          <p className="section-subtitle">{t("skills.subtitle")}</p>
         </motion.div>
 
         {/* Skills Grid */}
@@ -127,12 +127,10 @@ const Skills = () => {
         >
           <div className="glass-card p-8 rounded-xl max-w-3xl mx-auto">
             <h3 className="text-2xl font-semibold gradient-text mb-4">
-              Always Learning, Always Growing
+              {t("skills.learning.title")}
             </h3>
             <p className="text-silver/70 leading-relaxed">
-              As a passionate developer, I'm constantly exploring new
-              technologies and improving my skills. Currently diving deeper into
-              React ecosystem, TypeScript, and modern web development practices.
+              {t("skills.learning.description")}
             </p>
           </div>
         </motion.div>

@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Mail } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Contact = () => {
+  const { t } = useLanguage();
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -18,11 +20,9 @@ const Contact = () => {
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title gradient-text">Get In Touch</h2>
+          <h2 className="section-title gradient-text">{t("contact.title")}</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-secondary to-accent mx-auto mb-6"></div>
-          <p className="section-subtitle">
-            Let's discuss your next project or collaboration opportunity
-          </p>
+          <p className="section-subtitle">{t("contact.subtitle")}</p>
         </motion.div>
 
         {/* Contact Methods */}
@@ -34,13 +34,7 @@ const Contact = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-xl text-silver/80 leading-relaxed mb-8">
-              For <span className="text-secondary font-medium">hiring</span>,
-              <span className="text-secondary font-medium"> business</span>, or
-              <span className="text-secondary font-medium">
-                {" "}
-                collaboration
-              </span>{" "}
-              opportunities, feel free to reach out directly:
+              {t("contact.description")}
             </p>
           </motion.div>
 
@@ -59,10 +53,10 @@ const Contact = () => {
                   <Mail size={32} />
                 </div>
                 <h3 className="text-xl font-semibold text-silver mb-2">
-                  Email Me
+                  {t("contact.email.title")}
                 </h3>
                 <p className="text-silver/70 mb-4">
-                  Send me an email for detailed discussions
+                  {t("contact.email.description")}
                 </p>
                 <p className="text-secondary font-medium group-hover:text-accent transition-colors">
                   ronaldlehot@gmail.com
@@ -92,10 +86,10 @@ const Contact = () => {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-silver mb-2">
-                  Instagram DM
+                  {t("contact.instagram.title")}
                 </h3>
                 <p className="text-silver/70 mb-4">
-                  Quick chat via Instagram message
+                  {t("contact.instagram.description")}
                 </p>
                 <p className="text-secondary font-medium group-hover:text-accent transition-colors">
                   @ronaldlehot
@@ -111,9 +105,7 @@ const Contact = () => {
             animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ delay: 0.6 }}
           >
-            <p className="text-silver/60 mb-6">
-              Connect with me on other platforms:
-            </p>
+            <p className="text-silver/60 mb-6">{t("contact.social.title")}</p>
             <div className="flex justify-center space-x-8">
               <motion.a
                 href="https://www.linkedin.com/in/fransisco-ronaldo-lehot-6b553a326/"
@@ -150,8 +142,6 @@ const Contact = () => {
               </motion.a>
             </div>
           </motion.div>
-
-         
         </div>
       </div>
     </section>
